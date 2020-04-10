@@ -1,4 +1,4 @@
-package blackjackguts;
+package com.skilldistillery.blackjack;
 
 import java.util.ArrayList;
 import java.util.Collections;

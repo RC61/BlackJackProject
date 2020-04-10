@@ -1,4 +1,4 @@
-package blackjackguts;
+package com.skilldistillery.blackjack;
 
 public class CardTest {
   public static void main(String[] args) {
