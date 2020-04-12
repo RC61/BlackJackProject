@@ -24,8 +24,9 @@ I used the following on my project:
 * [Terminal] - What i used to push my code to GitHub
 * [Zoom] - Teleconference software i used to communicate with instructors and fellow students
 * [Slack] - Text based chat room, used to communicate with instructors and fellow students
-* [Google] - Thank goodness for google
-* [Stack Overflow] - I think this site helped...
+* [Google] - So many google searches
+* [Stack Overflow] - For reference
+* [Youtube] - I think this site helped...
 
 #### Lessons Learned
 
