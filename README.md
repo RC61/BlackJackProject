@@ -8,12 +8,12 @@ This is a README.md of Rory Coleman's JETS project.
 
 # Overview
 
-  - This homework was designed to implement all of the skills we have learned through 3 weeks.
-  - I created a Jet super class and two different sub classes. These subclasses extended the Jet super class and also implemented an interface.
+  - This homework was designed to implement all of the skills we have learned through 4 weeks.
+  - I wanted to empahsize true object oriented programming here. I tried to focus on hitting all aspects of APIE, (Abstraction, Implementation, Inheritance and Encapsulation.
 
 
  Topics Covered:
-  - Super & sub classes, lists, abstract classes, interfaces, Getters and setters, private fields, static fields, if statements, while loops, switches, for loops, for each loops, the concept of toString().
+  - Abstraction, Implementation, Inheritance and Encapsulation, lists, abstract classes, interfaces, Getters and setters, private fields, static fields, if statements, while loops, switches, for loops, for each loops, the concept of toString().
 
 ### Tech
 
@@ -31,9 +31,9 @@ I used the following on my project:
 
 Here are some lessons I learned or re-experienced:
 
-* Be sure to review what i've written every "so often"
-* Save your work, constantly
-* Take breaks
+* DRAW A UML
+* FOLLOW THE UML
+* Don't be afriad to try something with design
 * Check your work before asking for help
 * Double check your work before asking for help
 * Triple check your work before asking for help
