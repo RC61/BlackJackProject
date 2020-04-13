@@ -93,14 +93,14 @@ public class Table {
 	}
 
 	public void hitOrStand() {
-		int hitOrStand = 0;
+		int keepGoing = 0;
 		System.out.println();
 
 		do {
 			System.out.println("Player1, stand(0) or hit(1)?");
-			hitOrStand = kb.nextInt();
+			keepGoing = kb.nextInt();
 
-			switch (hitOrStand) {
+			switch (keepGoing) {
 			case 0:
 				System.out.println("Player1 stands");
 				break;
@@ -115,15 +115,17 @@ public class Table {
 				break;
 			}
 
-		} while (hitOrStand == 1);
+		} while (keepGoing == 1);
 	}
 
 	public void itsHouseTime() {
 		System.out.println("Dealer has");
+		System.out.println();
 		house.dealerShowMeAll();
 		
 		if (house.getHand().getCardsValue() == 21) {
 			System.out.println("House has 21");
+			System.out.println();
 		}
 
 		while ((house.getHand().getCardsValue() < 17
@@ -140,6 +142,7 @@ public class Table {
 			}
 			if (house.getHand().getCardsValue() < 17) {
 				System.out.println("Dealer hits");
+				System.out.println();
 				house.dealDealer(house.getDeck().dealCard());
 				house.dealerShowMeAll();
 				checkHouseForWinOrLoss();
@@ -147,6 +150,7 @@ public class Table {
 					break;
 				}
 			} else if (house.getHand().getCardsValue() >= 17) {
+				System.out.println();
 				System.out.println("Dealer stands");
 				break;
 			}
@@ -158,21 +162,11 @@ public class Table {
 		while (true) {
 
 			if (player1.getHand().busted()) {
-				System.out.println("XXXXXXXXXXXXXXXXXX");
-				System.out.println("X   YOU  BUSTED  X");
-				System.out.println("X   YOU  BUSTED  X");
-				System.out.println("X   YOU  BUSTED  X");
-				System.out.println("X   YOU  BUSTED  X");
-				System.out.println("XXXXXXXXXXXXXXXXXX");
+				playerOneBusted();
 				return false;
 
 			} else if (player1.getHand().twentyOne()) {
-				System.out.println("XXXXXXXXXXXXXXXXXX");
-				System.out.println("X 21 21 21 21 21 X");
-				System.out.println("X21 21 21 21 21  X");
-				System.out.println("X  21 21 21 21 21X");
-				System.out.println("X 21 21 21 21 21 X");
-				System.out.println("XXXXXXXXXXXXXXXXXX");
+				playerOneTwoOne();
 				return false;
 
 			} else {
@@ -183,15 +177,15 @@ public class Table {
 	}
 
 	public void checkResults() {
-		checkHouseForWinOrLoss();
-		checkPlayerForWinOrLoss();
+//		checkHouseForWinOrLoss();
+//		checkPlayerForWinOrLoss();
 
 		if (player1.getHand().getCardsValue() == house.getHand().getCardsValue()) {
-			System.out.println("Push");
+			pushIt();
 		} else if (player1.getHand().getCardsValue() > house.getHand().getCardsValue() || house.getHand().busted()) {
-			System.out.println("Player 1 wins!");
+			playerOneHasWon();
 		} else if (player1.getHand().getCardsValue() < house.getHand().getCardsValue() || player1.getHand().busted()) {
-			System.out.println("House wins...");
+			theHouseHasWon();
 		} else {
 			System.out.println("Call security");
 		}
@@ -202,21 +196,11 @@ public class Table {
 		while (true) {
 
 			if (house.getHand().busted()) {
-				System.out.println("XXXXXXXXXXXXXXXXXX");
-				System.out.println("X   HOUSE BUSTED X");
-				System.out.println("X   YOU  WIN     X");
-				System.out.println("X   HOUSE BUSTED X");
-				System.out.println("X   YOU  WIN     X");
-				System.out.println("XXXXXXXXXXXXXXXXXX");
+				houseBusted();
 				return false;
 
 			} else if (house.getHand().twentyOne()) {
-				System.out.println("XXXXXXXXXXXXXXXXXX");
-				System.out.println("X HOUSE HAS 21   X");
-				System.out.println("X    YOU  LOSE   X");
-				System.out.println("X HOUSE HAS 21   X");
-				System.out.println("X    YOU  LOSE   X");
-				System.out.println("XXXXXXXXXXXXXXXXXX");
+				houseTwoOne();
 				return false;
 
 			} else {
@@ -232,10 +216,94 @@ public class Table {
 	}
 	
 	public void playerBlackjack() {
-		System.out.println("XXXXXXXXXXXXXXXXX");
-		System.out.println("X   BLACKJACK   X");
-		System.out.println("X  PLAYER1 WINS X");
-		System.out.println("XXXXXXXXXXXXXXXXX");
+		System.out.println();
+		System.out.println("XXXXXXXXXXXXXXXXXXX");
+		System.out.println("X !!BLACKJACK!!   X");
+		System.out.println("X    PLAYER1 WINS X");
+		System.out.println("X !!BLACKJACK!!   X");
+		System.out.println("X    PLAYER1 WINS X");
+		System.out.println("XXXXXXXXXXXXXXXXXXX");
+		System.out.println();
+	}
+	
+	public void theHouseHasWon() {
+		System.out.println();
+		System.out.println("XXXXXXXXXXXXXXXXXX");
+		System.out.println("X                X");
+		System.out.println("X                X");
+		System.out.println("X   HOUSE WINS   X");
+		System.out.println("X                X");
+		System.out.println("X                X");
+		System.out.println("XXXXXXXXXXXXXXXXXX");
+		System.out.println();
+	}
+	
+	public void playerOneHasWon() {
+		System.out.println();
+		System.out.println("XXXXXXXXXXXXXXXXXX");
+		System.out.println("X                X");
+		System.out.println("X                X");
+		System.out.println("X    YOU WIN!    X");
+		System.out.println("X                X");
+		System.out.println("X                X");
+		System.out.println("XXXXXXXXXXXXXXXXXX");
+		System.out.println();
+	}
+	public void pushIt() {
+		System.out.println();
+		System.out.println("XXXXXXXXXXXXXXXXXX");
+		System.out.println("X                X");
+		System.out.println("X      PUSH      X");
+		System.out.println("X                X");
+		System.out.println("X                X");
+		System.out.println("XXXXXXXXXXXXXXXXXX");
+		System.out.println();
+	}
+	
+	public void houseBusted() {
+		System.out.println();
+		System.out.println("XXXXXXXXXXXXXXXXXX");
+		System.out.println("X                X");
+		System.out.println("X                X");
+		System.out.println("X  HOUSE BUSTED! X");
+		System.out.println("X                X");
+		System.out.println("X                X");
+		System.out.println("XXXXXXXXXXXXXXXXXX");
+		System.out.println();
+	}
+	public void houseTwoOne() {
+		System.out.println();
+		System.out.println("XXXXXXXXXXXXXXXXXX");
+		System.out.println("X                X");
+		System.out.println("X  HOUSE HAS 21  X");
+		System.out.println("X    !UH OH!     X");
+		System.out.println("X                X");
+		System.out.println("X                X");
+		System.out.println("XXXXXXXXXXXXXXXXXX");
+		System.out.println();
+	}
+	
+	public void playerOneBusted() {
+		System.out.println();
+		System.out.println("XXXXXXXXXXXXXXXXXX");
+		System.out.println("X                X");
+		System.out.println("X                X");
+		System.out.println("X   YOU  BUSTED  X");
+		System.out.println("X                X");
+		System.out.println("X                X");
+		System.out.println("XXXXXXXXXXXXXXXXXX");
+		System.out.println();
+	}
+	
+	public void playerOneTwoOne() {
+		System.out.println();
+		System.out.println("XXXXXXXXXXXXXXXXXX");
+		System.out.println("X 21 21 21 21 21 X");
+		System.out.println("X21 21 21 21 21  X");
+		System.out.println("X  21 21 21 21 21X");
+		System.out.println("X 21 21 21 21 21 X");
+		System.out.println("XXXXXXXXXXXXXXXXXX");
+		System.out.println();
 	}
 
 }
