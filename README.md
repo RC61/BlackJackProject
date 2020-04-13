@@ -4,10 +4,11 @@
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-This is a README.md of Rory Coleman's JETS project.
+This is a README.md of Rory Coleman's Blackjack project.
 
 # Overview
 
+  - This is my version of a Blackkjack program. It is supposed to mimic that of an actual Blackjack game.
   - This homework was designed to implement all of the skills we have learned through 4 weeks.
   - I wanted to empahsize true object oriented programming here. I tried to focus on hitting all aspects of APIE, (Abstraction, Implementation, Inheritance and Encapsulation.
 
